@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NoteService } from '../../../services/note.service';
+import { Note } from '../../../interfaces/note';
 
 @Component({
   selector: 'note-create',
@@ -9,13 +11,19 @@ export class NoteCreateComponent implements OnInit {
   public noteTitle: string;
   public noteDescription: string;
 
-  constructor() { }
+  constructor(private NoteService: NoteService) { }
 
   onSubmit() {
-    
+    const newNote = {
+      title: this.noteTitle,
+      description: this.noteDescription,
+      isDone: false,
+      isArchived: false,
+    };
+    this.NoteService.addNote(newNote as Note)
+      .subscribe(note => console.log(note));
   }
 
   ngOnInit() {
   }
-
 }

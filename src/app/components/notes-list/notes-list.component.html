@@ -1,0 +1,6 @@
+<mat-grid-list cols="3" rowHeight="250px">
+  <mat-grid-tile
+      *ngFor="let note of notes">
+    <note [note]="note"></note>
+  </mat-grid-tile>
+</mat-grid-list>

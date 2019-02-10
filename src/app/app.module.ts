@@ -12,6 +12,9 @@ import { NoteCreateModule } from './modules/note-create/note-create.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
+import { NotesListComponent } from './components/notes-list/notes-list.component';
+import { NoteComponent } from './components/note/note.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,11 +22,14 @@ import { InMemoryDataService } from './services/in-memory-data.service';
     HeaderComponent,
     DashboardComponent,
     NoteEditComponent,
+    NotesListComponent,
+    NoteComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule,
     MaterialComponentsModule,
     NoteCreateModule,

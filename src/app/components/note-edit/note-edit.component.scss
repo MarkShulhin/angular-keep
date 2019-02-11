@@ -1,0 +1,21 @@
+.note-edit {
+    width: 60%;
+    margin: 100px auto;
+}
+
+.note-edit-input {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.note-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.delete-button {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+}

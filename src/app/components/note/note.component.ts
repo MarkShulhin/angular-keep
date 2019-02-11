@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class NoteComponent implements OnInit {
   @Input() note: Note;
+  @Input() noteChange: Function;
 
   constructor(private router: Router) { }
 
@@ -17,6 +18,12 @@ export class NoteComponent implements OnInit {
 
   onArchive(): void {
     this.note.isArchived = true;
+    this.noteChange(this.note);
+  }
+
+  onDoneToggle(): void {
+    this.note.isDone = !this.note.isDone;
+    this.noteChange(this.note);
   }
 
   toEditPage(): void {

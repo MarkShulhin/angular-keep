@@ -11,7 +11,9 @@ export class NotesListComponent implements OnInit {
   public notes: Note[];
   @Input() isArchivedNotesAllowed: boolean;
   
-  constructor(private noteService: NoteService) { }
+  constructor(private noteService: NoteService) {
+    this.noteChange = this.noteChange.bind(this);
+  }
 
   ngOnInit() {
     this.getNotes();
@@ -19,11 +21,11 @@ export class NotesListComponent implements OnInit {
 
   getNotes(): void {
     this.noteService.getNotes()
-      .subscribe(notes => this.notes = notes);
+      .subscribe(notes => {this.notes = notes;});
   }
 
-  DoneChange(note: Note) {
+  noteChange(note: Note) {
     this.noteService.updateNote(note)
-      .subscribe(note => console.log(note));
+      .subscribe(() => this.getNotes());
   };
 }

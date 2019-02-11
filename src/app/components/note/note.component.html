@@ -11,12 +11,17 @@
     </mat-card-content>
   </div>
   <mat-card-actions class="note-actions">
-      <mat-checkbox 
-        [(ngModel)]="note.isDone"
+      <mat-checkbox (click)="onDoneToggle()" [checked]="note.isDone"
       >Done</mat-checkbox>
       <mat-icon
+        *ngIf="!note.isArchived"
         (click)="onArchive()"
         class="icon"
       >archive</mat-icon>
+      <mat-icon
+        *ngIf="note.isArchived"
+        (click)="onArchive()"
+        class="icon"
+      >unarchive</mat-icon>
   </mat-card-actions>
 </mat-card>

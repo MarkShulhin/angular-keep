@@ -9,7 +9,7 @@ import { Note } from '../../interfaces/note';
 })
 export class NotesListComponent implements OnInit {
   public notes: Note[];
-  public isArchivedNotesAllowed: boolean = false;
+  @Input() isArchivedNotesAllowed: boolean;
   
   constructor(private noteService: NoteService) { }
 
@@ -22,7 +22,7 @@ export class NotesListComponent implements OnInit {
       .subscribe(notes => this.notes = notes);
   }
 
-  public DoneChange(note: Note) {
+  DoneChange(note: Note) {
     this.noteService.updateNote(note)
       .subscribe(note => console.log(note));
   };

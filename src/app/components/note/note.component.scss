@@ -1,5 +1,5 @@
 .note {
-    width: 150%;
+    width: 100%;
 }
 
 .done {
@@ -8,4 +8,18 @@
 
 .icon {
     cursor: pointer;
+}
+
+.note-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.note-header {
+    justify-content: center;
+}
+
+.note-content {
+    text-align: left;
 }

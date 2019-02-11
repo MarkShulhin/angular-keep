@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NoteService } from '../../services/note.service';
 import { Note } from '../../interfaces/note';
 
@@ -9,7 +9,8 @@ import { Note } from '../../interfaces/note';
 })
 export class NotesListComponent implements OnInit {
   public notes: Note[];
-
+  public isArchivedNotesAllowed: boolean = false;
+  
   constructor(private noteService: NoteService) { }
 
   ngOnInit() {
@@ -18,7 +19,11 @@ export class NotesListComponent implements OnInit {
 
   getNotes(): void {
     this.noteService.getNotes()
-    .subscribe(notes => this.notes = notes);
+      .subscribe(notes => this.notes = notes);
   }
 
+  public DoneChange(note: Note) {
+    this.noteService.updateNote(note)
+      .subscribe(note => console.log(note));
+  };
 }

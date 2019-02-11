@@ -3,15 +3,17 @@
   [ngClass]="{'done': note.isDone}"
 > 
   <div (click)="toEditPage()">
-    <mat-card-header>
+    <mat-card-header class="note-header">
       <mat-card-title>{{ note.title }}</mat-card-title>
     </mat-card-header>
-    <mat-card-content>
+    <mat-card-content class="note-content">
       {{ note.description }}
     </mat-card-content>
   </div>
-  <mat-card-actions>
-      <mat-checkbox [(ngModel)]="note.isDone">Done</mat-checkbox>
+  <mat-card-actions class="note-actions">
+      <mat-checkbox 
+        [(ngModel)]="note.isDone"
+      >Done</mat-checkbox>
       <mat-icon
         (click)="onArchive()"
         class="icon"

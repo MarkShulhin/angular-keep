@@ -1,6 +1,6 @@
-<mat-grid-list cols="3" rowHeight="250px">
+<mat-grid-list cols="4" rowHeight="250px" class="grid-list">
   <mat-grid-tile
-      *ngFor="let note of notes">
+      *ngFor="let note of notes | archiveFilter:isArchivedNotesAllowed">
     <note [note]="note"></note>
   </mat-grid-tile>
 </mat-grid-list>

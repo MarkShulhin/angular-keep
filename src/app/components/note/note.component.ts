@@ -8,19 +8,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./note.component.scss']
 })
 export class NoteComponent implements OnInit {
-  @Input() note;
+  @Input() note: Note;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
-    console.log(this.note);
   }
 
-  onArchive() {
+  onArchive(): void {
     this.note.isArchived = true;
   }
 
-  toEditPage() {
+  toEditPage(): void {
     this.router.navigate([`/edit/${this.note.id}`]);
   }
+
 }

@@ -20,8 +20,12 @@ export class NoteCreateComponent implements OnInit {
       isDone: false,
       isArchived: false,
     };
+
     this.NoteService.addNote(newNote as Note)
       .subscribe(note => console.log(note));
+
+    this.noteTitle = '';
+    this.noteDescription = '';
   }
 
   ngOnInit() {

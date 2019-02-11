@@ -15,6 +15,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { NotesListComponent } from './components/notes-list/notes-list.component';
 import { NoteComponent } from './components/note/note.component';
 import { FormsModule } from '@angular/forms';
+import { ArchiveFilterPipe } from './pipes/archive-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     NoteEditComponent,
     NotesListComponent,
     NoteComponent,
+    ArchiveFilterPipe,
   ],
   imports: [
     BrowserModule,

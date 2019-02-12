@@ -1,5 +1,6 @@
 <mat-card class="note-create-wrapper">
   <form (ngSubmit)="onSubmit()">
+    <h3>Create a note</h3>
     <mat-card-content>
       <mat-form-field class="form-field">
         <input 
@@ -18,7 +19,7 @@
         ></textarea>
       </mat-form-field>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions class="edit-actions">
       <button type="submit" mat-raised-button color="primary">Create</button>
     </mat-card-actions>
   </form>

@@ -10,20 +10,31 @@ import { Router } from '@angular/router';
 export class NoteComponent implements OnInit {
   @Input() note: Note;
   @Input() noteChange: Function;
+  @Input() deleteNote: Function;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  onDelete(): void {
+    this.deleteNote(this.note);
+  }
+
   onArchive(): void {
-    this.note.isArchived = true;
-    this.noteChange(this.note);
+    const newNote = {
+      ...this.note,
+      isArchived: !this.note.isArchived,
+    }
+    this.noteChange(newNote);
   }
 
   onDoneToggle(): void {
-    this.note.isDone = !this.note.isDone;
-    this.noteChange(this.note);
+    const newNote = {
+      ...this.note,
+      isDone: !this.note.isDone,
+    };
+    this.noteChange(newNote);
   }
 
   toEditPage(): void {

@@ -1,5 +1,5 @@
 .note {
-    width: 100%;
+    position: relative;
 }
 
 .done {
@@ -22,4 +22,10 @@
 
 .note-content {
     text-align: left;
+}
+
+.delete-button {
+    position: absolute;
+    right: -20px;
+    top: -20px;
 }

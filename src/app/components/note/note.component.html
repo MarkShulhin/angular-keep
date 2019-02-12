@@ -2,6 +2,14 @@
   class="note"
   [ngClass]="{'done': note.isDone}"
 > 
+  <button 
+    mat-mini-fab
+    color="primary" 
+    class="delete-button"
+    (click)="onDelete()"
+  >
+    X
+  </button>
   <div (click)="toEditPage()">
     <mat-card-header class="note-header">
       <mat-card-title>{{ note.title }}</mat-card-title>
@@ -11,7 +19,10 @@
     </mat-card-content>
   </div>
   <mat-card-actions class="note-actions">
-      <mat-checkbox (click)="onDoneToggle()" [checked]="note.isDone"
+      <mat-checkbox 
+        (click)="onDoneToggle()"
+        [checked]="note.isDone"
+        color="primary"
       >Done</mat-checkbox>
       <mat-icon
         *ngIf="!note.isArchived"

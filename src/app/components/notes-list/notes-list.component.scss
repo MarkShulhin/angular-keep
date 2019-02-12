@@ -1,4 +1,14 @@
 .grid-list {
     max-width: 90%;
-    margin: 0 auto
+    margin: 0 auto;
+}
+
+.search-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search {
+    width: 70%;
 }

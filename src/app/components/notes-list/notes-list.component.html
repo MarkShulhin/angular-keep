@@ -1,6 +1,18 @@
-<mat-grid-list cols="4" rowHeight="250px" class="grid-list">
+<div class="search-wrapper">
+  <mat-form-field class="search">
+    <input matInput placeholder="Search" [(ngModel)]="searchTerm">
+  </mat-form-field>
+</div>
+<mat-grid-list cols="5" rowHeight="170px" class="grid-list">
   <mat-grid-tile
-      *ngFor="let note of notes | archiveFilter:isArchivedNotesAllowed">
-    <note [note]="note" [noteChange]="noteChange"></note>
+      *ngFor="let note of notes 
+      | archiveFilter:isArchivedNotesAllowed
+      | search:searchTerm
+      ">
+    <note 
+      [note]="note"
+      [noteChange]="noteChange"
+      [deleteNote]="deleteNote"
+    ></note>
   </mat-grid-tile>
 </mat-grid-list>

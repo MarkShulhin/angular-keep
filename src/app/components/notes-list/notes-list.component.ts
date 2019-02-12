@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { NoteService } from '../../services/note.service';
+import { Component, Input } from '@angular/core';
 import { Note } from '../../interfaces/note';
 
 @Component({
@@ -7,25 +6,13 @@ import { Note } from '../../interfaces/note';
   templateUrl: './notes-list.component.html',
   styleUrls: ['./notes-list.component.scss']
 })
-export class NotesListComponent implements OnInit {
-  public notes: Note[];
+export class NotesListComponent {
+  @Input() notes: Note[];
+  @Input() noteChange: Function;
+  @Input() deleteNote: Function;
   @Input() isArchivedNotesAllowed: boolean;
+
+  public searchTerm: string;
   
-  constructor(private noteService: NoteService) {
-    this.noteChange = this.noteChange.bind(this);
-  }
-
-  ngOnInit() {
-    this.getNotes();
-  }
-
-  getNotes(): void {
-    this.noteService.getNotes()
-      .subscribe(notes => {this.notes = notes;});
-  }
-
-  noteChange(note: Note) {
-    this.noteService.updateNote(note)
-      .subscribe(() => this.getNotes());
-  };
+  constructor() { }
 }

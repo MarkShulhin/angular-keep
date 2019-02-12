@@ -1,2 +1,17 @@
-<note-create></note-create>
-<notes-list [isArchivedNotesAllowed]="isArchivedNotesAllowed"></notes-list>
+<div *ngIf="router.url === '/'">
+    <h1 class="heading">Dashboard</h1>
+    <note-create (addedNote)="addedNote($event)"></note-create>
+    <notes-list
+        [isArchivedNotesAllowed]="isArchivedNotesAllowed"
+        [noteChange]="noteChange"
+        [deleteNote]="deleteNote"
+        [notes]="notes"
+    ></notes-list>
+</div>
+<div *ngIf="router.url === '/archive'">
+    <archive
+        [noteChange]="noteChange"
+        [deleteNote]="deleteNote"
+        [notes]="notes"
+    ></archive>
+</div>

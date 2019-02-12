@@ -1,2 +1,7 @@
-<h1>Archived notes:</h1>
-<notes-list [isArchivedNotesAllowed]="isArchivedNotesAllowed"></notes-list>
+<h1 class="heading">Archived notes:</h1>
+<notes-list 
+    [notes]="notes"
+    [noteChange]="noteChange"
+    [deleteNote]="deleteNote"
+    [isArchivedNotesAllowed]="isArchivedNotesAllowed"
+></notes-list>

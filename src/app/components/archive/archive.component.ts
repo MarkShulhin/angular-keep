@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Note } from '../../interfaces/note';
 
 @Component({
   selector: 'archive',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArchiveComponent implements OnInit {
   public isArchivedNotesAllowed: boolean = true;
+  @Input() notes: Note[];
+  @Input() noteChange: Function;
+  @Input() deleteNote: Function;
 
   constructor() { }
 

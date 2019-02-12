@@ -17,6 +17,7 @@ import { NoteComponent } from './components/note/note.component';
 import { FormsModule } from '@angular/forms';
 import { ArchiveFilterPipe } from './pipes/archive-filter.pipe';
 import { ArchiveComponent } from './components/archive/archive.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,9 @@ import { ArchiveComponent } from './components/archive/archive.component';
     NoteEditComponent,
     NotesListComponent,
     NoteComponent,
-    ArchiveFilterPipe,
     ArchiveComponent,
+    ArchiveFilterPipe,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,

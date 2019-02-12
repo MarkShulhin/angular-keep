@@ -1,21 +1,22 @@
-<mat-card class="note-edit" [ngClass]="{'done': note.isDone}">
-  <button 
-    mat-mini-fab color="primary" 
-    class="delete-button"
-    (click)="delete()"
-  >
+<h1 class="heading">Edit your note</h1>
+<mat-card *ngIf="note" class="note-edit" [ngClass]="{'done': note.isDone}">
+  <button mat-mini-fab color="primary" class="delete-button" (click)="delete()">
     <mat-icon>delete_forever</mat-icon>
   </button>
   <mat-card-content>
-    <input matInput placeholder="Title" [(ngModel)]="note.title" class="note-edit-input">
-    <input matInput placeholder="Description" [(ngModel)]="note.description" class="note-edit-input">
+    <mat-form-field class="note-edit-input">
+      <input matInput placeholder="Title" [(ngModel)]="note.title" >
+    </mat-form-field>
+    <mat-form-field class="note-edit-input">
+      <input matInput placeholder="Description" [(ngModel)]="note.description" >
+    </mat-form-field>
   </mat-card-content>
   <mat-card-actions class="note-actions">
     <mat-checkbox [(ngModel)]="note.isDone">Done</mat-checkbox>
     <mat-checkbox [(ngModel)]="note.isArchived">
       <mat-icon class="icon">archive</mat-icon>
     </mat-checkbox>
-    <button mat-stroked-button (click)="goBack()">go back</button>
-    <button mat-stroked-button color="primary" (click)="save()">save</button>
+    <button mat-stroked-button (click)="goBack()">Back</button>
+    <button mat-stroked-button color="primary" (click)="save()">Save</button>
   </mat-card-actions>
 </mat-card>

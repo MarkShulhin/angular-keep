@@ -25,7 +25,7 @@ export class NoteEditComponent implements OnInit {
   getHero(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.noteService.getNote(id)
-      .subscribe(note => {this.note = note; console.log(note)});
+      .subscribe(note => {this.note = note;});
   }
 
   goBack(): void {

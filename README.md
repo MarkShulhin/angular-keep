@@ -1,6 +1,8 @@
 # AngularKeep
+[![Netlify Status](https://api.netlify.com/api/v1/badges/89fb5ffa-46ec-4844-9ab4-e45d20ccb2c3/deploy-status)](https://app.netlify.com/sites/angular-keep/deploys)
 
-This is a Google Keep clone made using Angular
+This is a Google Keep clone made using Angular.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
 
 ## Development server

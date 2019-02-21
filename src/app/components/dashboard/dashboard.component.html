@@ -2,7 +2,6 @@
     <h1 class="heading">Dashboard</h1>
     <note-create (addedNote)="addedNote($event)"></note-create>
     <notes-list
-        [isArchivedNotesAllowed]="isArchivedNotesAllowed"
         [noteChange]="noteChange"
         [deleteNote]="deleteNote"
         [notes]="notes"

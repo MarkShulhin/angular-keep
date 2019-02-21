@@ -7,7 +7,6 @@ import { Note } from '../../interfaces/note';
   styleUrls: ['./archive.component.scss']
 })
 export class ArchiveComponent implements OnInit {
-  public isArchivedNotesAllowed: boolean = true;
   @Input() notes: Note[];
   @Input() noteChange: Function;
   @Input() deleteNote: Function;

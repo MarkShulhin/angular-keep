@@ -10,7 +10,6 @@ export class NotesListComponent {
   @Input() notes: Note[];
   @Input() noteChange: Function;
   @Input() deleteNote: Function;
-  @Input() isArchivedNotesAllowed: boolean;
 
   public searchTerm: string;
   

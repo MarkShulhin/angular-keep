@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Note } from '../../interfaces/note';
 import { NoteService } from '../../services/note.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,15 +10,14 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
   public notes: Note[] = [];
-  public isArchivedNotesAllowed: boolean = false;
   constructor(
     private noteService: NoteService,
+    private route: ActivatedRoute,
     public router: Router,
   ) { }
 
   ngOnInit() {
-    this.noteService.getNotes()
-      .subscribe(notes => this.notes = notes);
+    this.notes = this.route.snapshot.data.notes;
   }
 
   addedNote(newNote: Note): void {
@@ -28,7 +27,8 @@ export class DashboardComponent implements OnInit {
 
   deleteNote = (note: Note): void => {
     this.notes = this.notes.filter(n => n !== note);
-    this.noteService.deleteNote(note).subscribe(() => {});
+    this.noteService.deleteNote(note)
+      .subscribe();
   }
 
   noteChange = (note: Note): void => {

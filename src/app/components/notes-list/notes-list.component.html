@@ -5,10 +5,7 @@
 </div>
 <mat-grid-list cols="5" rowHeight="170px" class="grid-list">
   <mat-grid-tile
-      *ngFor="let note of notes 
-      | archiveFilter:isArchivedNotesAllowed
-      | search:searchTerm
-      ">
+      *ngFor="let note of notes | search:searchTerm">
     <note 
       [note]="note"
       [noteChange]="noteChange"
